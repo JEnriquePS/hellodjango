@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}
+    productos
+{% endblock title %}
+{% block carousel %}
+{% endblock carousel %}
+{% block contenido %}
+        <h1>catalogo de productos  </h1>
+        {% if productos %}
+            {% for p in productos %}
+                <p>{{p.nombre}}</p>
+            {% endfor %}
+        {% else %}
+            <h2>no existen produstos activos a la venta :(</h2>
+        {% endif %}
+{% endblock contenido %}
