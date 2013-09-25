@@ -1,12 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
- # Static asset configuration
+# Django settings for hellodjango project.
+# Static asset configuration
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-
 #templates
 #RUTA_PROYECTO = os.path.dirname(os.path.abspath(__file__))
-# Django settings for hellodjango project.
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -19,11 +18,11 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.', # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': '',                      # Or path to database file if using sqlite3.
-        'USER': '',                      # Not used with sqlite3.
-        'PASSWORD': '',                  # Not used with sqlite3.
-        'HOST': '',                      # Set to empty string for localhost. Not used with sqlite3.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'granbase',                      # Or path to database file if using sqlite3.
+        'USER': 'jenrique',                      # Not used with sqlite3.
+        'PASSWORD': 'jesus=)',                  # Not used with sqlite3.
+        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
     }
 }
@@ -53,12 +52,11 @@ USE_TZ = True
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
-MEDIA_ROOT = ''
-
+MEDIA_ROOT = os.path.normpath(os.path.join(BASE_DIR, 'media/'))
 # URL that handles the media served from MEDIA_ROOT. Make sure to use a
 # trailing slash.
 # Examples: "http://media.lawrence.com/media/", "http://example.com/media/"
-MEDIA_URL = ''
+MEDIA_URL = '/media/'
 
 # Absolute path to the directory static files should be collected to.
 # Don't put anything in this directory yourself; store your static files
@@ -82,7 +80,7 @@ MEDIA_URL = ''
 STATICFILES_FINDERS = (
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-#    'django.contrib.staticfiles.finders.DefaultStorageFinder',
+    #'django.contrib.staticfiles.finders.DefaultStorageFinder',
 )
 
 # Make this unique, and don't share it with anybody.
@@ -92,7 +90,7 @@ SECRET_KEY = '(m4!%hn2cnzz355=#+n@0h+c&amp;g1l15@v8^5hk0=bxz$&amp;m@erg@'
 TEMPLATE_LOADERS = (
     'django.template.loaders.filesystem.Loader',
     'django.template.loaders.app_directories.Loader',
-#     'django.template.loaders.eggs.Loader',
+    # 'django.template.loaders.eggs.Loader',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -124,9 +122,11 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable the admin:
     'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
-    #'django.contrib.admindocs',
+    'django.contrib.admindocs',
     'gunicorn',
-    'campuskit',
+    #activando startapps
+    'hellodjango.apps.campuskit',
+    'hellodjango.apps.home',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -157,21 +157,22 @@ LOGGING = {
         },
     }
 }
-######my configuration para heroku
-
-STATIC_ROOT = 'staticfiles'
-STATIC_URL = '/static/'
+######################################
+######my configuration para heroku###############
+######################################
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-# Parse database configuration from $DATABASE_URL
+STATIC_ROOT = 'staticfiles'
+STATIC_URL = '/static/'
+
+'''# Parse database configuration from $DATABASE_URL
 import dj_database_url
-DATABASES['default'] =  dj_database_url.config('')
+DATABASES['default'] = dj_database_url.config('')
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-
+'''
 # Allow all host headers
 ALLOWED_HOSTS = ['*']
-

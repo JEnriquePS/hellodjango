@@ -1,29 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="shortcut icon" href="static/bootstrap3/assets/ico/favicon.png">
-
-    <title>JEnriquePS</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="static/bootstrap3/dist/css/bootstrap.css" rel="stylesheet">
-
+    <link rel="shortcut icon" href="/static/bootstrap3/assets/ico/favicon.png">
+    <title>
+    {% block titulo %}
+    JEnriquePS
+    {% endblock titulo %}
+    </title>
+    <link href="/static/bootstrap3/dist/css/bootstrap.css" rel="stylesheet">
     <!-- Custom styles for this template -->
     <link href="jumbotron.css" rel="stylesheet">
-
-    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and static queries -->
     <!--[if lt IE 9]>
       <script src="../../assets/js/html5shiv.js"></script>
       <script src="../../assets/js/respond.min.js"></script>
     <![endif]-->
   </head>
 
-  <body>
 
+  <body>
+{% block menu %}
     <div class="navbar navbar-inverse navbar-fixed-top">
       <div class="container">
         <div class="navbar-header">
@@ -36,9 +37,10 @@
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li class="active"><a href="{% url vista_principal %} ">Home</a></li>
+            <li><a href="{% url vista_about %}">About</a></li>
+            <li><a href="{% url vista_Contactos %}">Contact</a></li>
+            <li><a href="{% url vista_productos %}">Producto</a></li>
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
               <ul class="dropdown-menu">
@@ -63,7 +65,12 @@
           </form>
         </div><!--/.navbar-collapse -->
       </div>
+      <img src="/static/images/logodjango.gif" alt="">
     </div>
+{% endblock menu %}
+
+
+{% block carousel %}
     <!-- Carousel
     ================================================== -->
     <div id="myCarousel" class="carousel slide">
@@ -108,6 +115,8 @@
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
     </div><!-- /.carousel -->
+{% endblock carousel %}
+{% block contenido %}
 
     <!-- Main jumbotron for a primary marketing message or call to action -->
     <div class="jumbotron">
@@ -144,13 +153,15 @@
         <p>&copy; Company 2013</p>
       </footer>
     </div> <!-- /container -->
+{% endblock contenido %}
 
-
+{% block scripts %}
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    <script src="static/bootstrap3/assets/js/jquery.js"></script>
-    <script src="static/bootstrap3/dist/js/bootstrap.min.js"></script>
-    <script src="static/bootstrap3/assets/js/holder.js"></script>
+    <script src="/static/bootstrap3/assets/js/jquery.js"></script>
+    <script src="/static/bootstrap3/dist/js/bootstrap.min.js"></script>
+    <script src="/static/bootstrap3/assets/js/holder.js"></script>
+{% endblock scripts %}
   </body>
 </html>
