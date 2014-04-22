@@ -5,7 +5,7 @@
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-DEBUG = True
+DEBUG = False
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
@@ -18,11 +18,11 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'granbase',
+        'NAME': 'd33tceg7n9skjn',
         # Or path to database file if using sqlite3.
-        'USER': 'jenrique',                      # Not used with sqlite3.
-        'PASSWORD': 'jesus=)',      # Not used with sqlite3.
-        'HOST': 'localhost',
+        'USER': 'eimcohfkyqcxvq',                      # Not used with sqlite3.
+        'PASSWORD': 'kua5HJBq6FHy0cZgO8xL7yKR07',      # Not used with sqlite3.
+        'HOST': 'ec2-54-221-236-4.compute-1.amazonaws.com',
         # Set to empty string for localhost. Not used with sqlite3.
         'PORT': '5432',
         # Set to empty string for default. Not used with sqlite3.
