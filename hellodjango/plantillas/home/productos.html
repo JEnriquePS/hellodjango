@@ -4,13 +4,18 @@
 {% endblock title %}
 {% block carousel %}
 {% endblock carousel %}
+
 {% block contenido %}
-        <h1>catalogo de productos  </h1>
+    <div class="container">
+      <div class="jumbotron">
+    <h1>catalogo de productos  </h1>
         {% if productos %}
             {% for p in productos %}
                 <p>{{p.nombre}}</p>
             {% endfor %}
         {% else %}
-            <h2>no existen produstos activos a la venta :(</h2>
+            <h2>no existen productos activos a la venta :(</h2>
         {% endif %}
+      </div>
+    </div>
 {% endblock contenido %}

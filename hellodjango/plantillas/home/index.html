@@ -1,7 +1,58 @@
 {% extends "base.html" %}
-{% block titulo%}
-    Ventas
-{% endblock titulo %}
+{% block tituo %}
+  
+{% endblock tituo %}
 {% block carousel %}
-    
+  
 {% endblock carousel %}
+{% block contenido %}
+<!doctype html>
+<html>
+<head>
+  <title>rodar</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="title" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="">
+  <meta content="" property="og:url" />
+  <meta content="" property="og:image" />
+  <link rel="image_src" href="/static/images/static.png" />
+  <link rel="shortcut icon" id="favicon" href="favicon.png">
+  <link rel="canonical" href="http://www.thepetedesign.com/demos/label_better_demo.html" />
+  <link rel="stylesheet" href="/static/style.css"/>
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:300,400,700' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href="../static/bootstrap3/dist/css/bootstrap.css" rel="stylesheet">
+  <script type="text/javascript" src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  <script type="text/javascript" src="/static/jquery.label_better.js"></script>
+  <script type="text/javascript" src="/static/bootstrap3/dist/js/bootstrap.js"></script>
+  <script>
+    $(document).ready( function() {
+      $(".label_better").label_better({
+        easing: "bounce"
+      });
+    });
+
+  </script>
+</head>
+<body id="back">
+  <div class="container">
+        <form class="bl_form">
+          <input type="text" class="label_better" data-new-placeholder="Username" placeholder="Username" >
+          <input type="email" class="label_better" data-new-placeholder="Email Address" placeholder="Email Address">
+          <input type="password" class="label_better" data-new-placeholder="Password" placeholder="Password">
+          <input type="password" class="label_better" data-new-placeholder="Shhh.." placeholder="Confirm Password">
+        </form>
+
+</div>
+</body>
+</html>
+{% endblock contenido %}
+{% block scripts %}
+    <!-- Bootstrap core JavaScript-->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/static/bootstrap3/assets/js/jquery.js"></script>
+    <script src="/static/bootstrap3/dist/js/bootstrap.min.js"></script>
+    <script src="/static/bootstrap3/assets/js/holder.js"></script>
+{% endblock scripts %}

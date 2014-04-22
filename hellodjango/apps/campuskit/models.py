@@ -17,21 +17,18 @@ class cliente(models.Model):
 
 
 class producto(models.Model):
-    """docstring for producto"""
     nombre = models.CharField(max_length=100)
     descripcion = models.TextField(max_length=300)
     status = models.BooleanField(default=True)
 
     def __unicode__(self):
         return self.nombre
-'''
-class Datos(models.Model):
-            """docstring for Datos"""
-    nombres = models.CharField(max_length=150)
-    apellidos = models.CharField(max_length=150)
-    numeros = models.IntegerField()
-    direccion = models.CharField(max_length=150)
 
-            def __unicode__(self):
-                return "%s %S" % (self.nombres, self.apellidos)
-'''
+
+class blogAbout(models.Model):
+    titulo = models.CharField(max_length=100)
+    contenido = models.TextField()
+    #imagen = models.ImageField(upload_to='images')
+
+    def __unicode__(self):
+        return  self.titulo

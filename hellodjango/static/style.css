@@ -1,0 +1,45 @@
+ html {
+ height: 100%;
+ }
+input{
+    padding-top:20px;
+}
+#back{
+
+}
+
+.bl_form {
+      margin: 150px 0;
+    }
+
+.bl_form input {
+      padding-top: 10px;
+      background: rgba(255,255,255,0.10);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+      border: none;
+      color: #F76C61;
+      padding: 10px 15px;
+      border-radius: 25px;
+      font-size: 16px;
+      outline: none;
+    }
+
+.lb_wrap .lb_label.top, .lb_wrap .lb_label.bottom {
+    left: 15px !important;
+    }
+
+.lb_wrap .lb_label.left {
+      left: 0;
+    }
+
+.lb_label {
+      font-weight: bolder;
+      color: #999;
+    }
+
+.lb_label.active {
+      color: #F76C61;
+    }
+
+
+

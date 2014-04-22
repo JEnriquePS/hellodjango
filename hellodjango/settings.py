@@ -1,11 +1,9 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 # Django settings for hellodjango project.
-# Static asset configuration
+# Static asset configuration configurando la Ruta del Proyecto BASE_DIR
 import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-#templates
-#RUTA_PROYECTO = os.path.dirname(os.path.abspath(__file__))
 
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
@@ -18,12 +16,16 @@ MANAGERS = ADMINS
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',  # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
-        'NAME': 'granbase',                      # Or path to database file if using sqlite3.
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        # Add 'postgresql_psycopg2', 'mysql', 'sqlite3' or 'oracle'.
+        'NAME': 'granbase',
+        # Or path to database file if using sqlite3.
         'USER': 'jenrique',                      # Not used with sqlite3.
-        'PASSWORD': 'jesus=)',                  # Not used with sqlite3.
-        'HOST': 'localhost',                      # Set to empty string for localhost. Not used with sqlite3.
-        'PORT': '',                      # Set to empty string for default. Not used with sqlite3.
+        'PASSWORD': 'jesus=)',      # Not used with sqlite3.
+        'HOST': 'localhost',
+        # Set to empty string for localhost. Not used with sqlite3.
+        'PORT': '5432',
+        # Set to empty string for default. Not used with sqlite3.
     }
 }
 
@@ -158,21 +160,22 @@ LOGGING = {
     }
 }
 ######################################
-######my configuration para heroku###############
+######configuration para heroku#######
 ######################################
 
+STATIC_ROOT = ''
+STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )
-STATIC_ROOT = 'staticfiles'
-STATIC_URL = '/static/'
 
-'''# Parse database configuration from $DATABASE_URL
+
+# Parse database configuration from $DATABASE_URL
 import dj_database_url
 DATABASES['default'] = dj_database_url.config('')
 
 # Honor the 'X-Forwarded-Proto' header for request.is_secure()
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
-'''
+
 # Allow all host headers
 ALLOWED_HOSTS = ['*']

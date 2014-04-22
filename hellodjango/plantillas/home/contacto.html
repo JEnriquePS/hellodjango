@@ -1,9 +1,8 @@
 {% extends "base.html" %}
 {% block title %}
-{% endblock title %}
     Contactanos
+{% endblock title %}
 {% block carousel %}
-    
 {% endblock carousel %}
 {% block contenido %}
     {% if info_enviado %}
@@ -14,7 +13,7 @@
         <p>Texto:<h3>{{texto}}</h3></p>
     {% else %}
         <form action="." method="POST" accept-charset="utf-8">
-        {% csrf_token %}
+            {% csrf_token %}
             {{form.as_p}}
             <input type="submit" value="submit">
         </form>
