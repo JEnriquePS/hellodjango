@@ -31,4 +31,4 @@ class blogAbout(models.Model):
     #imagen = models.ImageField(upload_to='images')
 
     def __unicode__(self):
-        return  self.titulo
+        return self.titulo
