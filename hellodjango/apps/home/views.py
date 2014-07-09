@@ -1,7 +1,16 @@
+#from django.http import HttpResponse
+#from datetime import datetime
 from django.shortcuts import render_to_response
 from django.template import RequestContext
 from hellodjango.apps.campuskit.models import producto
 from hellodjango.apps.home.forms import ContactForm
+
+
+# def hora_actual_view(request):
+#     """Clasico Funcion de la obtener la hora"""
+#     ahora = datetime.now()
+#     html = "<html><body> esta es la hora {}</body></html>".format(ahora)
+#     return HttpResponse(html)
 
 
 def jenriqueps_view(request):
