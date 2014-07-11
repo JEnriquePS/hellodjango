@@ -3,7 +3,12 @@
 
 from django.db import models
 
-# Create your models here.
+
+class Calculo(models.Model):
+    """calculadora"""
+    nun1 = models.IntegerField()
+    nun2 = models.IntegerField()
+    nun = models.IntegerField()
 
 
 class cliente(models.Model):

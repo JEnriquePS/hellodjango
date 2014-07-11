@@ -8,3 +8,4 @@ urlpatterns = patterns('hellodjango.apps.home.views',
     url(r'^contacto/$', 'contacto_view', name='vista_Contactos'),
     url(r'^jenriqueps/$', 'index_view', name='vista_principal'),
 )
+
