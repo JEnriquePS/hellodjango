@@ -17,9 +17,9 @@ MANAGERS = ADMINS
 DATABASES = {
     'default': {
 
-        'ENGINE': 'django.db.backends.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'db_hello',
-        'USER': 'postgres',
+        'USER': 'jesus_db',
         'PASSWORD': 'jesus=)',
         'HOST': 'localhost',
         'PORT': '5432',
@@ -123,7 +123,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     'django.contrib.admindocs',
     'south',
-    #'gunicorn',
+    'gunicorn',
     #activando startapps
     'hellodjango.apps.campuskit',
     'hellodjango.apps.home',
